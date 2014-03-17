@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
+* { padding: 0; margin: 0; }
+body { background: #f2f2f2; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 1px;}
+
+header {
+    text-align: justify;
+    height: 6em;
+    padding: 2em 5%;
+    background: #ffffff;
+    color: #464646;
+}
+
+
+header::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+header > div,
+header > div::before,
+header nav,
+header > div h1 {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+header > div {
+    height: 100%;
+}
+
+header > div::before {
+    content: '';
+    height: 100%;
+}
+
+header > div h1 {
+    font-size: 3em;
+    font-style: italic;
+}
+
+header nav a {
+    padding: 0 0.6em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+header nav a:hover {
+    color: #2bb673;
+    text-decoration: none;
+}
+
+header nav a:active {
+    color: #2bb673;
+    text-decoration: none;
+}
+
+header nav a:visited {
+    text-decoration: none;
+}
+
+header nav a.selected {
+    color: #2bb673;
+    text-decoration: none;
+}
+
+header nav a:last-child {
+    padding-right: 0;
+}
+
+@media screen and (max-width: 720px){
+    
+    header {
+        height: auto;
+    }
+    
+    header img {
+        padding: 2em 5%;
+    }
+
+    header > div,
+    header > div h1,
+    header nav {
+        height: auto;
+        width: auto;
+        display: block;
+        text-align: center;
+    }
+    
+}
