@@ -20,6 +20,8 @@ body {
   text-transform: uppercase; 
   letter-spacing: 1px;  position: relative;
   background: #464646;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .floatl {
@@ -105,6 +107,15 @@ body {
 	vertical-align: middle;
 }
 
+#organization-name {
+	padding: 5px;
+	float: left;
+	vertical-align: middle;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+}
+
 /* Content handling */
 #contentWrap {
   min-height: 100%;
@@ -120,7 +131,7 @@ body {
 	background: #fff;
 	height: 100px;
 	width: 100%;
-	position: fixed;
+	float: right;
 }
 #sideToggle1:checked ~ #contentWrap {
   -webkit-transform: translatex(250px);
