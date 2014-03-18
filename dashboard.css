@@ -109,6 +109,7 @@ body {
 
 #organization-name {
 	padding: 5px;
+  padding-left: 10px;
 	float: left;
 	vertical-align: middle;
 	border-top: 1px solid #ccc;
@@ -133,8 +134,143 @@ body {
 	width: 100%;
 	float: right;
 }
+
+.center {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#svg {
+  position:relative;
+  top: 20px;
+  left: 100px;
+  padding: 20px;
+  margin: 10px;
+  width: 1000px;
+  display: inline-block;
+  height: 280px;
+  max-width: 90%;
+  color: #000;
+  background: none;
+}
+
+#events {
+  position: relative;
+  top: 20px;
+  padding: 20px;
+  margin: 20px;
+  width: 600px;
+  height: 180px;
+  max-width: 90%;
+  color: #000;
+  background: none;
+  background-image: url(calendar.svg);
+  background-size: 100px 100px;
+  background-position: 50px 60px;
+  background-repeat: no-repeat;
+}
+
+#description {
+  position: relative;
+  left: 200px;
+  top: 30px;
+  width: 400px;
+  height: 150px;
+}
+
+#member-feature {
+  position: relative;
+  top: 20px;
+  left: 0px;
+  width: 400px;
+  height: 150px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+#members {
+  position: relative;
+  left: 600px;
+  top: -170px;
+  padding: 20px;
+  margin: 20px;
+  width: 600px;
+  height: 180px;
+  max-width: 90%;
+  color: #000;
+  background: none;
+}
+
+
 #sideToggle1:checked ~ #contentWrap {
   -webkit-transform: translatex(250px);
   border-radius: 8px;
   transform: translatex(250px);
+}
+
+@media (max-width: 1280px) {
+  #svg {
+    width: 550px;
+    margin: 44px;
+  }
+
+  #events {
+    width: 550px;
+    margin: 44px;
+  }
+
+  #members {
+    width: 550px;
+    margin: 4px;
+  }
+}
+
+@media (max-width: 1000px) {
+  #grid {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #grid {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #svg {
+    margin: 20px;
+  }
+
+  #events {
+    margin: 20px;
+  }
+
+  #members {
+    margin: 20px;
+  }
+
+  #organization-name {
+    text-align: center;
+  }
+
+  #contentWrap {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  html { 
+    height: 100%;
+  }
+
+  body {
+    overflow-y: hidden;
+    height: 100%;
+    background: #f2f2f2;
+  }
 }

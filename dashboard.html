@@ -4,6 +4,13 @@
 		<meta charset="UTF-8" />
 		<title>Exchange - Dashboard</title>
 		<link rel="stylesheet" type="text/css" href="dashboard.css" />
+
+        <script src="Chart.js"></script>
+        <style>
+            canvas{
+            }
+        </style>
+
  	</head>
 	<body>
 		<input type='checkbox' id='sideToggle1' hidden>
@@ -12,7 +19,7 @@
 		<aside class='sideMenu left'>
 			<h2>Menu</h2>
   			<ul>
-    			<li><a href='#'>dashboard</a></li>
+    			<li><a href="dashboard.html">dashboard</a></li>
     			<li><a href='#'>events</a></li>
     			<li><a href='#'>members</a></li>
     			<li><a href="#">settings</a></li>
@@ -31,8 +38,55 @@
     			<p>Chinese Student Association</p>
     		</div>
     		
-    	</div>
+            <div class="center">
+                <div id="svg">
+                    <p>Member Activity</p><br />
+                    <canvas id="canvas" height="250" width="900"></canvas>
+                </div>
+
+                <div id="events">
+                    <h2>upcoming events</h2>
+                    <div id="description">
+                        <h2>End of Quarter Potluck</h2>
+                        <p id="date">March 31, 2014</p><br />
+                    </div>
+
+                </div>
+
+                <div id="members">
+                    <h2>newest member</h2>
+                   <!-- <svg height="200" width="100">
+                            <circle cx="50" cy="70" r="40" stroke="white" stroke-width="3" fill="grey" align="left"/>
+                        </svg> --> 
+                    <div id="member-feature">
+                        
+                        <h2>First, Last</h2>
+                        <p id="joined-when">Joined 3/3/14</p>
+                    </div>
+                </div>
+
+    	    </div>
   		</div>
+
+    <script>
+
+        var lineChartData = {
+            labels : ["January","February","March","April","May","June","July"],
+            datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,1)",
+                    pointColor : "rgba(220,220,220,1)",
+                    pointStrokeColor : "#fff",
+                    data : [65,59,90,81,56,55,40]
+                },
+            ]
+            
+        }
+
+    var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+    
+    </script>
 
 	</body>
 </html>
