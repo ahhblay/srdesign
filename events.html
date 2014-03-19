@@ -3,7 +3,53 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Exchange - Events</title>
+      <script src="modernizr.custom.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="events.css" />
+
+    <script>
+        $(#button).on('click', function() {
+          var triggerBttn = document.getElementById( 'trigger-overlay' ),
+    overlay = document.querySelector( 'div.overlay' ),
+    closeBttn = overlay.querySelector( 'button.overlay-close' );
+    transEndEventNames = {
+      'WebkitTransition': 'webkitTransitionEnd',
+      'MozTransition': 'transitionend',
+      'OTransition': 'oTransitionEnd',
+      'msTransition': 'MSTransitionEnd',
+      'transition': 'transitionend'
+    },
+    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+    support = { transitions : Modernizr.csstransitions };
+
+  function toggleOverlay() {
+    if( classie.has( overlay, 'open' ) ) {
+      classie.remove( overlay, 'open' );
+      classie.add( overlay, 'close' );
+      var onEndTransitionFn = function( ev ) {
+        if( support.transitions ) {
+          if( ev.propertyName !== 'visibility' ) return;
+          this.removeEventListener( transEndEventName, onEndTransitionFn );
+        }
+        classie.remove( overlay, 'close' );
+      };
+      if( support.transitions ) {
+        overlay.addEventListener( transEndEventName, onEndTransitionFn );
+      }
+      else {
+        onEndTransitionFn();
+      }
+    }
+    else if( !classie.has( overlay, 'close' ) ) {
+      classie.add( overlay, 'open' );
+    }
+  }
+
+  triggerBttn.addEventListener( 'click', toggleOverlay );
+  closeBttn.addEventListener( 'click', toggleOverlay );
+        });
+    </script>
+
  	</head>
 	<body>
 		<input type='checkbox' id='sideToggle1' hidden>
@@ -44,11 +90,54 @@
           </section>
  
           <section id="add-new">
-              <h2><a href="#">+ add new event</a></h2>
+              <h2><a href="#" id="trigger-overlay">+ add new event</a></h2>
           </section>
         </div>
 
+<!--        <button id="trigger-overlay" type="button">Open Overlay</button>  -->
+
+
+        <div class="overlay overlay-slidedown">
+          <!---awesome overlay content goes here woot woot -->
+          <button type="button" class="overlay-close">Close</button>
+
+  <div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1">
+      
+      <p class="title">
+        <input name="title" type="text" class="feedback-input" placeholder="Event Title" id="title" />
+      </p>
+      
+      <p class="date">
+        <input name="date" type="text" class="feedback-input" id="date" placeholder="Event Date" />
+      </p>
+
+      <p class="description">
+        <input name="description" type="textarea" class="feedback-input" id="description" placeholder="Event Description" />
+      </p>
+
+      <p class="location">
+        <input name="location" type="text" class="feedback-input" id="location" placeholder="Event Location" />
+      </p>
+      <br />
+      <div class="save">
+        <input type="submit" value="Save" id="save"/>
+        <div class="ease"></div>
+      </div>
+      <br />
+      <div class="delete">
+        <input type="submit" value="Delete" id="delete" />
+        <div class="ease"></div>
+      </div>
+
+    </form>
+
+        </div>
+
   		</div>
+    <script src="classie.js"></script>
+    <script src="demo1.js"></script>
 
 	</body>
 </html>
