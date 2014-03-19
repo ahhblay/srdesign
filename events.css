@@ -171,23 +171,32 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; } 
   overflow:hidden; 
   margin: 0px auto; 
   color:#474747; 
-  background:#414141; 
+  background:none; 
   padding: 20px; 
 }
 
 /*General Accordion****************************************************************************/
 /*Set style of open slide*/
-.accordion section:target { background:#FFF; padding:0px; width: 99%;}
-.accordion section:target:hover { background:#FFF; }
+.accordion section:target { background:#fff; padding:0px; width: 99%;}
+.accordion section:target:hover h2 a { background:#f2f2f2; color: #2bb673; }
 .accordion section:target h2 {width:100%; padding: 0px;}
-.accordion section:target h2 a{ color:#333; padding:0px; position: relative; top: 10px;}
+.accordion section:target h2 a{ 
+    color:#2bb673; 
+    padding:0px; 
+    position: relative; 
+    top: 10px;
+    background: url(edit.svg);
+    background-size: 15px 15px;
+    background-position: 720px 1px;
+    background-repeat: no-repeat;
+}
 .accordion section:target p {display:block; padding: 10px; margin-top: 10px}
 .accordion section h2 a{
     position:relative; left:10px; top: 10px; 
     display:block; 
     font-size:16px; 
     font-weight:normal;
-    color:#eee; 
+    color:#fff; 
     text-decoration:none; 
   }
 
@@ -216,18 +225,16 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; } 
   background-repeat: no-repeat;
 }
 
-.accordion section:hover {background:#444;}
+#add-new h2 {
+  text-align: center;
+}
+
 .accordion section p { display:none; }
 .accordion section:after{position:relative;font-size:24px;color:#000;font-weight:bold;}
-/*.accordion section:nth-child(1):after{content:'1';}
-.accordion section:nth-child(2):after{content:'2';}
-.accordion section:nth-child(3):after{content:'3';}
-.accordion section:nth-child(4):after{content:'4';}
-.accordion section:nth-child(5):after{content:'5';}
-*//*End General Accordion****************************************************************************/
+/*End General Accordion****************************************************************************/
 
 /*Vertical Accordion *************************************************************************/
-.vertical section{ width:99%; height:40px; background: #ccc;
+.vertical section{ width:99%; height:40px; background: #2bb673;
   -webkit-transition:height 0.2s ease-out;
   -moz-transition:height 0.2s ease-out;
     -o-transition:height 0.2s ease-out;
@@ -237,7 +244,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; } 
 /*Set height of the slide*/
 .vertical :target{ height:250px; width:100%; }
 
-.vertical section h2 { }
+.vertical section h2 { color: #2bb673; }
 
 /*Set position of the number on the slide
 .vertical section:after{ top:-60px;left:810px;}
