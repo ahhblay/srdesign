@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Exchange - Settings</title>
+      <script src="modernizr.custom.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="settings.css" />
+
+ 
+ 	</head>
+	<body>
+		<input type='checkbox' id='sideToggle1' hidden>
+		<input type='checkbox' id='sideToggle2' hidden>
+		
+		<aside class='sideMenu left'>
+			<h2>Menu</h2>
+  			<ul>
+    			<li><a href="dashboard.html">dashboard</a></li>
+    			<li><a href="events.html">events</a></li>
+    			<li><a href="members.html">members</a></li>
+    			<li><a href="settings.html">settings</a></li>
+    			<li><a href="login.php">Log Out</a></li>
+  			</ul>
+		</aside>
+		<div id='contentWrap'>
+			<div id="header">
+				<div id="greeting">
+    				<p>Welcome, Able</p>
+    			</div>
+    			<label class='menuBtn' for='sideToggle1'>&minus;</label>
+    		</div>
+
+    		<div id="organization-name">
+    			<p>Chinese Student Association</p>
+    		</div>
+        <div id="content">
+        <div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1">
+      
+      <p class="title">
+        <input name="username" type="text" class="feedback-input" placeholder="Username" id="username" />
+      </p>
+      
+      <p class="password">
+        <input name="password" type="text" class="feedback-input" id="password" placeholder="Password" />
+      </p>
+
+      <br />
+      <div class="save">
+        <input type="submit" value="Save" id="save"/>
+        <div class="ease"></div>
+      </div>
+
+    </form>
+
+        </div>
+
+      </div>
+          
+  		</div>
+    </div>
+    <script src="classie.js"></script>
+    <script src="demo1.js"></script>
+
+	</body>
+</html>

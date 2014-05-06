@@ -31,6 +31,7 @@
       <p class="password">
         <input name="password" type="password" class="feedback-input" id="password" placeholder="Password" />
       </p>
+
       <br />
       <div class="submit">
       	<input type="submit" value="Login" id="button"/>

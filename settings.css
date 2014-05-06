@@ -145,13 +145,6 @@ body {
 
 /* ----------------- */
 
-#event-container {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
   display: block; 
@@ -185,13 +178,14 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; } 
 /*General Accordion****************************************************************************/
 /*Set style of open slide*/
 .accordion section:target { background:#fff; padding:0px; width: 99%;}
-.accordion section:target:hover h2 a { background:#fff; color: #2bb673; }
+.accordion section:target:hover h2 a { background:#f2f2f2; color: #2bb673; }
 .accordion section:target h2 {width:100%; padding: 0px;}
 .accordion section:target h2 a{ 
     color:#2bb673; 
     padding:0px; 
     position: relative; 
     top: 10px;
+    background: url(edit.svg);
     background-size: 15px 15px;
     background-position: 720px 1px;
     background-repeat: no-repeat;
@@ -217,35 +211,18 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; } 
   margin:3px; 
 }
 
-.accordion section a:hover {
-  background: url(edit.svg);
-}
-
 #event-1 a {
+  background: url(edit.svg);
   background-size: 15px 15px;
   background-position: 720px 1px;
   background-repeat: no-repeat;
 }
 
 #event-2 a {
+  background: url(edit.svg);
   background-size: 15px 15px;
   background-position: 720px 1px;
   background-repeat: no-repeat;
-}
-
-#edit {
-  font-size: 12px;
-  text-transform: none;
-  color: #2bb673;
-  font-weight: bold;
-}
-
-#edit a:active{
-  text-decoration: none;
-}
-
-#add-new a:hover {
-  background: none;
 }
 
 #add-new h2 {
@@ -274,7 +251,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; } 
 .vertical section:target:after{ left:-9999px;}
 */
 
-/* ---------ADD NEW EVENT OVERLAY-------- */
+/* ----------------- */
 
 button {
   color: #fff;
@@ -299,7 +276,7 @@ button {
 }
 
 /* Overlay style */
-.overlay-add {
+.overlay {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -309,7 +286,7 @@ button {
 }
 
 /* Overlay closing cross */
-.overlay-add .overlay-close {
+.overlay .overlay-close {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -344,21 +321,28 @@ button {
 
 /*------------------*/
 
-#form-main-add{
-    width:100%;
-    float:left;
-    padding-top:50px;
+#content {
+  position: absolute;
+  top: 100px;
+  left: -200px;
+  width: 100%;
 }
 
-#form-div-add {
+#form-main{
+    width:100%;
+    float:left;
+    padding-top:0px;
+}
+
+#form-div {
     background-color:rgba(225, 225, 225, 1);
     padding-left:35px;
     padding-right:35px;
     padding-top:35px;
     padding-bottom:50px;
-    width: 450px;
-    float: left;
+    width: 400px;
     left: 50%;
+    top: 150px;
     position: absolute;
   margin-top:30px;
     margin-left: -260px;
@@ -399,63 +383,35 @@ button {
 }
 
 /* Icons ---------------------------------- */
-#title{
-    background-image: url(title.svg);
+#username{
+    background-image: url(username.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#title:focus{
-    background-image: url(title.svg);
+#username:focus{
+    background-image: url(username.svg);
     background-size: 30px 30px;
     background-position: 8px 5px;
     background-repeat: no-repeat;
 }
 
-#date{
-    background-image: url(calendar.svg);
+#password{
+    background-image: url(password.svg);
     background-size: 30px 30px;
     background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#date:focus{
-    background-image: url(calendar.svg);
+#password:focus{
+    background-image: url(password.svg);
     background-size: 30px 30px;
   background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
-#description {
-    background-image: url(description.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#description:focus {
-    background-image: url(description.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#location {
-    background-image: url(location.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#location:focus {
-    background-image: url(location.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#create{
+#save{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     float:left;
     width: 100%;
@@ -473,18 +429,18 @@ button {
   font-weight:700;
 }
 
-#create:hover{
+#save:hover{
     background-color: rgba(0,0,0,0);
     color: #2bb673;
 }
     
-.create:hover {
+.save:hover {
     color: #2bb673;
 }
     
 .ease {
     width: 0px;
-    height: 74px;
+    height: 20px;
     background-color: #fbfbfb;
     -webkit-transition: .3s ease;
     -moz-transition: .3s ease;
@@ -507,255 +463,8 @@ button {
     background-color: #e25050;
     color:white;
     font-size:24px;
-    padding-top:22px;
-    padding-bottom:22px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
-}
-
-#delete:hover{
-    background-color: rgba(0,0,0,0);
-    color: #e25050;
-}
-    
-.delete:hover {
-    color: #e25050;
-}
-    
-.ease {
-    width: 0px;
-    height: 74px;
-    background-color: #fbfbfb;
-    -webkit-transition: .3s ease;
-    -moz-transition: .3s ease;
-    -o-transition: .3s ease;
-    -ms-transition: .3s ease;
-    transition: .3s ease;
-}
-
-.delete:hover .ease{
-  width:100%;
-  background-color:white;
-}
-
-/*-----------END ADD NEW EVENT OVERLAY-------*/
-
-/* ---------EDIT EVENT OVERLAY-------- */
-
-/* Overlay style */
-.overlay-edit {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(43, 182, 115, 0.9);
-}
-
-/* Overlay closing cross */
-.overlay-edit .overlay-close {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  overflow: hidden;
-  border: none;
-  background: url(cross.png) no-repeat center center;
-  text-indent: 200%;
-  color: transparent;
-  outline: none;
-  z-index: 100;
-}
-
-/* Effects */
-.overlay-slidedown {
-  visibility: hidden;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
-  transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
-}
-
-.overlay-slidedown.open {
-  visibility: visible;
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-}
-
-
-/*------------------*/
-
-#form-main-edit{
-    width:100%;
-    float:left;
-    padding-top:50px;
-}
-
-#form-div-edit {
-    background-color:rgba(225, 225, 225, 1);
-    padding-left:35px;
-    padding-right:35px;
-    padding-top:35px;
-    padding-bottom:50px;
-    width: 450px;
-    float: left;
-    left: 50%;
-    position: absolute;
-  margin-top:30px;
-    margin-left: -260px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-}
-
-.feedback-input {
-    color:#3c3c3c;
-    font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
-    font-size: 18px;
-    border-radius: 0;
-    line-height: 22px;
-    background-color: #fbfbfb;
-    padding: 13px 13px 13px 54px;
-    margin-bottom: 10px;
-    width:100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-  border: 3px solid rgba(0,0,0,0);
-}
-
-.feedback-input:focus{
-    background: #fff;
-    box-shadow: 0;
-    border: 3px solid #2bb673;
-    color: #2bb673;
-    outline: none;
-  padding: 13px 13px 13px 54px;
-}
-
-.focused{
-    color:#2bb673;
-    border:#2bb673 solid 3px;
-}
-
-/* Icons ---------------------------------- */
-#title{
-    background-image: url(title.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#title:focus{
-    background-image: url(title.svg);
-    background-size: 30px 30px;
-    background-position: 8px 5px;
-    background-repeat: no-repeat;
-}
-
-#date{
-    background-image: url(calendar.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#date:focus{
-    background-image: url(calendar.svg);
-    background-size: 30px 30px;
-  background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#description {
-    background-image: url(description.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#description:focus {
-    background-image: url(description.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#location {
-    background-image: url(location.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#location:focus {
-    background-image: url(location.svg);
-    background-size: 30px 30px;
-    background-position: 11px 8px;
-    background-repeat: no-repeat;
-}
-
-#create{
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    float:left;
-    width: 100%;
-    border: #fbfbfb solid 4px;
-    cursor:pointer;
-    background-color: #2bb673;
-    color:white;
-    font-size:24px;
-    padding-top:22px;
-    padding-bottom:22px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
-}
-
-#create:hover{
-    background-color: rgba(0,0,0,0);
-    color: #2bb673;
-}
-    
-.create:hover {
-    color: #2bb673;
-}
-    
-.ease {
-    width: 0px;
-    height: 74px;
-    background-color: #fbfbfb;
-    -webkit-transition: .3s ease;
-    -moz-transition: .3s ease;
-    -o-transition: .3s ease;
-    -ms-transition: .3s ease;
-    transition: .3s ease;
-}
-
-.save:hover .ease{
-  width:100%;
-  background-color:white;
-}
-
-#delete{
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    float:left;
-    width: 100%;
-    border: #fbfbfb solid 4px;
-    cursor:pointer;
-    background-color: #e25050;
-    color:white;
-    font-size:24px;
-    padding-top:22px;
-    padding-bottom:22px;
+    padding-top:15px;
+    padding-bottom:15px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;

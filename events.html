@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,48 +8,17 @@
 		<link rel="stylesheet" type="text/css" href="events.css" />
 
     <script>
-        $(#button).on('click', function() {
-          var triggerBttn = document.getElementById( 'trigger-overlay' ),
-    overlay = document.querySelector( 'div.overlay' ),
-    closeBttn = overlay.querySelector( 'button.overlay-close' );
-    transEndEventNames = {
-      'WebkitTransition': 'webkitTransitionEnd',
-      'MozTransition': 'transitionend',
-      'OTransition': 'oTransitionEnd',
-      'msTransition': 'MSTransitionEnd',
-      'transition': 'transitionend'
-    },
-    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-    support = { transitions : Modernizr.csstransitions };
+    var div = document.createElement("div");
+        div.setAttribute("id", "mydiv");
 
-  function toggleOverlay() {
-    if( classie.has( overlay, 'open' ) ) {
-      classie.remove( overlay, 'open' );
-      classie.add( overlay, 'close' );
-      var onEndTransitionFn = function( ev ) {
-        if( support.transitions ) {
-          if( ev.propertyName !== 'visibility' ) return;
-          this.removeEventListener( transEndEventName, onEndTransitionFn );
-        }
-        classie.remove( overlay, 'close' );
-      };
-      if( support.transitions ) {
-        overlay.addEventListener( transEndEventName, onEndTransitionFn );
-      }
-      else {
-        onEndTransitionFn();
-      }
-    }
-    else if( !classie.has( overlay, 'close' ) ) {
-      classie.add( overlay, 'open' );
-    }
-  }
+        div.className = "notice";
+        div.style.display = "none";
 
-  triggerBttn.addEventListener( 'click', toggleOverlay );
-  closeBttn.addEventListener( 'click', toggleOverlay );
-        });
+        // test case, append the div to the body
+        document.contentWrap.appendChild(div);
     </script>
 
+ 
  	</head>
 	<body>
 		<input type='checkbox' id='sideToggle1' hidden>
@@ -61,8 +30,8 @@
     			<li><a href="dashboard.html">dashboard</a></li>
     			<li><a href="events.html">events</a></li>
     			<li><a href="members.html">members</a></li>
-    			<li><a href="#">settings</a></li>
-    			<li><a href="#">Log Out</a></li>
+    			<li><a href="settings.html">settings</a></li>
+    			<li><a href="login.php">Log Out</a></li>
   			</ul>
 		</aside>
 		<div id='contentWrap'>
@@ -81,7 +50,8 @@
 
           <section id="event-1">
               <h2><a href="#event-1">5/18/14 - End of Quarter Potluck </a></h2>
-              <p>Event description goes here.</p>
+              <p>Event description goes here.<br /><br />
+                <a id="edit" href="edit.html" id="trigger-overlay-edit">Edit Event</a></p>
 
           </section>
           <section id="event-2">
@@ -90,19 +60,20 @@
           </section>
  
           <section id="add-new">
-              <h2><a href="#" id="trigger-overlay">+ add new event</a></h2>
+              <h2><a href="#" id="trigger-overlay-add">+ add new event</a></h2>
           </section>
         </div>
 
 <!--        <button id="trigger-overlay" type="button">Open Overlay</button>  -->
 
 
-        <div class="overlay overlay-slidedown">
+<!-- TRIGGER ADD NEW EVENT OVERLAY --> 
+        <div class="overlay-add overlay-slidedown">
           <!---awesome overlay content goes here woot woot -->
           <button type="button" class="overlay-close">Close</button>
 
-  <div id="form-main">
-  <div id="form-div">
+  <div id="form-main-add">
+  <div id="form-div-add">
     <form class="form" id="form1">
       
       <p class="title">
@@ -121,21 +92,20 @@
         <input name="location" type="text" class="feedback-input" id="location" placeholder="Event Location" />
       </p>
       <br />
-      <div class="save">
-        <input type="submit" value="Save" id="save"/>
+      <div class="create">
+        <input type="submit" value="Create" id="create"/>
         <div class="ease"></div>
       </div>
       <br />
-      <div class="delete">
-        <input type="submit" value="Delete" id="delete" />
-        <div class="ease"></div>
-      </div>
 
     </form>
 
         </div>
 
   		</div>
+<!-- END TRIGGER ADD NEW EVENT OVERLAY -->
+
+
     <script src="classie.js"></script>
     <script src="demo1.js"></script>
 
