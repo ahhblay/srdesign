@@ -7,8 +7,16 @@
 
 		<link rel="stylesheet" type="text/css" href="settings.css" />
 
- 
+		<script type="text/javascript">
+	 		function create()
+	 		{
+		 		//var data=document.getElementById("data").value;
+		 		var data="Chinese Student Association";
+		 		document.getElementById("qrimage").innerHTML="<img src='https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl="+data+"'/>";
+		 		}
+		 		</script>
  	</head>
+ 	
 	<body>
 		<input type='checkbox' id='sideToggle1' hidden>
 		<input type='checkbox' id='sideToggle2' hidden>
@@ -19,7 +27,6 @@
     			<li><a href="dashboard.html">dashboard</a></li>
     			<li><a href="events.html">events</a></li>
     			<li><a href="members.html">members</a></li>
-    			<li><a href="qrcodegen.html">qr code</a></li>
     			<li><a href="settings.html">settings</a></li>
     			<li><a href="login.php">Log Out</a></li>
   			</ul>
@@ -35,33 +42,40 @@
     		<div id="organization-name">
     			<p>Chinese Student Association</p>
     		</div>
-        <div id="content">
-        <div id="form-main">
-  <div id="form-div">
-    <form class="form" id="form1">
+			
+			<div id="content">
+        		<div id="form-main">
+					<div id="form-div">
+						<form class="form" id="form1">
       
-      <p class="title">
-        <input name="username" type="text" class="feedback-input" placeholder="Username" id="username" />
-      </p>
+						<p class="title">
+							<input name="username" type="text" class="feedback-input" placeholder="Username" id="username" />
+						</p>
       
-      <p class="password">
-        <input name="password" type="text" class="feedback-input" id="password" placeholder="Password" />
-      </p>
+						<p class="password">
+							<input name="password" type="text" class="feedback-input" id="password" placeholder="Password" />
+						</p>
+						<br />
+						<div class="save">
+							<input type="submit" value="Save" id="save"/>
+							<div class="ease"></div>
+						</div>
 
-      <br />
-      <div class="save">
-        <input type="submit" value="Save" id="save"/>
-        <div class="ease"></div>
-      </div>
-
-    </form>
-
-        </div>
-
-      </div>
-          
-  		</div>
-    </div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<div id="qrmain" align="center">
+				<p style="font-size:20px;text-align:center;">QR Image</p>
+				<div id="qrimage">
+				</div>
+			</div>
+    
+	</div>
+        	
+			
+  	<script type="text/javascript"> create(); </script>
     <script src="classie.js"></script>
     <script src="demo1.js"></script>
 

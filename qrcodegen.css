@@ -145,6 +145,7 @@ body {
 /* -------------------------------- */ 
 
 qrmain{
+	float: left;
     margin: 15px auto;
     background:white;
     overflow: auto;
