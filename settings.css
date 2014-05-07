@@ -330,6 +330,11 @@ button {
 	width: 300px;
 }
 
+#qrimage{
+    background-color:rgba(225, 225, 225, 1);
+    height:275px;
+}
+
 #content {
 	float:left;
 }
@@ -357,7 +362,7 @@ button {
 .feedback-input {
     color:#3c3c3c;
     font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
+	font-weight:500;
     font-size: 18px;
     border-radius: 0;
     line-height: 22px;
@@ -369,7 +374,7 @@ button {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-  border: 3px solid rgba(0,0,0,0);
+	border: 3px solid rgba(0,0,0,0);
 }
 
 .feedback-input:focus{
@@ -378,7 +383,7 @@ button {
     border: 3px solid #2bb673;
     color: #2bb673;
     outline: none;
-  padding: 13px 13px 13px 54px;
+	padding: 13px 13px 13px 54px;
 }
 
 .focused{
@@ -411,7 +416,7 @@ button {
 #password:focus{
     background-image: url(password.svg);
     background-size: 30px 30px;
-  background-position: 11px 8px;
+	background-position: 11px 8px;
     background-repeat: no-repeat;
 }
 
@@ -429,8 +434,8 @@ button {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
+	margin-top:-4px;
+	font-weight:700;
 }
 
 #save:hover{
@@ -472,8 +477,8 @@ button {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
+	margin-top:-4px;
+	font-weight:700;
 }
 
 #delete:hover{
@@ -497,8 +502,8 @@ button {
 }
 
 .delete:hover .ease{
-  width:100%;
-  background-color:white;
+  	width:100%;
+  	background-color:white;
 }
 
 /*------------------*/
